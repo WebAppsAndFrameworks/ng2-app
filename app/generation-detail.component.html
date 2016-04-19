@@ -1,13 +1,22 @@
 <div *ngIf="pokemonList">
-  <h2>Generation details!</h2>
-  <div *ngIf="selectedPokemon">
-    {{selectedPokemon | json}}
+  <div class="two-pane">
+    <div class="left">
+      <div class="pad">
+        <h2>Generation {{ generation }}</h2>
+      </div>
+      <ul class="pokemon-list">
+        <li *ngFor="#pokemon of pokemonList"
+          class="item"
+          (click)="showPokemon(pokemon.id)">
+          {{ pokemon.name }}
+        </li>
+      </ul>
+    </div>
+    <div class="right">
+      <div *ngIf="selectedPokemon">
+        <h2>{{ selectedPokemon.name }}</h2>
+        <img src="{{ selectedPokemon.img }}" />
+      </div>
+    </div>
   </div>
-  <ul>
-    <li *ngFor="#pokemon of pokemonList">
-      <!-- {{ pokemon.name }} -->
-      <a (click)="showPokemon(pokemon.id)">{{ pokemon.name }}</a>
-    </li>
-  </ul>
-  <button (click)="goBack()">Back</button>
 </div>

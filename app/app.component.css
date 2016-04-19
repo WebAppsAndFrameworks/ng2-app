@@ -1,6 +1,25 @@
+/*div.content {
+  padding: 25px;
+}*/
+
+header {
+  background: #3b8686;
+  color: #f4f7f7;
+  height: 3rem;
+  padding-left: 25px;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+header a,
+header a:visited,
+header a:link {
+  text-decoration: none;
+  color: #f4f7f7;
+}
+
 h1 {
   font-size: 1.2em;
-  color: #999;
   margin-bottom: 0;
 }
 h2 {

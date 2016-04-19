@@ -21,9 +21,11 @@ export class GenerationDetailComponent implements OnInit {
 
   pokemonList: any;
   selectedPokemon: any;
+  generation: number;
 
   ngOnInit() {
     let id = +this._routeParams.get('id');
+    this.generation = id;
     this._pokemonService.getSpecies(id)
       .subscribe((species) => {
         this.pokemonList = species;

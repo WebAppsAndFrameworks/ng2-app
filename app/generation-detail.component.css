@@ -1,29 +1,48 @@
-label {
-  display: inline-block;
-  width: 3em;
-  margin: .5em 0;
-  color: #607D8B;
-  font-weight: bold;
+.two-pane {
+  position: absolute;
+  top: 3rem;
+  bottom: 0;
+  width: 100%;
 }
-input {
-  height: 2em;
-  font-size: 1em;
-  padding-left: .4em;
+
+.left {
+  position: absolute;
+  width: 30%;
+  height: 100%;
+  overflow: auto;
 }
-button {
-  margin-top: 20px;
-  font-family: Arial;
-  background-color: #eee;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 4px;
-  cursor: pointer; cursor: hand;
+
+.left .pad {
+  padding-left: 25px;
 }
-button:hover {
-  background-color: #cfd8dc;
+
+.right {
+  position: absolute;
+  width: 70%;
+  right: 0;
+  height: 100%;
+  padding: 1.25rem;
 }
-button:disabled {
-  background-color: #eee;
-  color: #ccc;
-  cursor: auto;
+
+.pokemon-list {
+  padding-left: 0;
+}
+
+.pokemon-list li {
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 25px;
+  display: flex;
+  align-items: center;
+}
+
+.pokemon-list .item {
+  height: 4rem;
+  border-bottom: 0.0625em solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.pokemon-list .item:hover {
+  background: rgba(0, 0, 0, 0.1);
+  border-bottom: 0.0625em solid rgba(0, 0, 0, 0);
 }
