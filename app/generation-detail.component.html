@@ -1,8 +1,12 @@
 <div *ngIf="pokemonList">
   <h2>Generation details!</h2>
+  <div *ngIf="selectedPokemon">
+    {{selectedPokemon | json}}
+  </div>
   <ul>
     <li *ngFor="#pokemon of pokemonList">
-      {{ pokemon.name }}
+      <!-- {{ pokemon.name }} -->
+      <a (click)="showPokemon(pokemon.id)">{{ pokemon.name }}</a>
     </li>
   </ul>
   <button (click)="goBack()">Back</button>
