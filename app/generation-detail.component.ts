@@ -2,11 +2,13 @@ import {Component, Input, OnInit} from 'angular2/core';
 import {RouteParams} from 'angular2/router';
 
 import {PokemonService} from './pokemon.service';
+import {PokemonFilterPipe} from './pokemon-filter.pipe';
 
 @Component({
   selector: 'generation-detail',
   templateUrl: 'app/generation-detail.component.html',
   styleUrls: ['app/generation-detail.component.css'],
+  pipes: [PokemonFilterPipe],
 })
 export class GenerationDetailComponent implements OnInit {
   constructor(
@@ -22,6 +24,7 @@ export class GenerationDetailComponent implements OnInit {
   pokemonList: any;
   selectedPokemon: any;
   generation: number;
+  filterStr: string;
 
   ngOnInit() {
     let id = +this._routeParams.get('id');

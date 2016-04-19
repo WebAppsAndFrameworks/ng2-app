@@ -46,6 +46,7 @@ export class PokemonService {
              .map(species => {
                 return species.map((specimen) => {
                   specimen.id = +idRegex.exec(specimen.url)[1];
+                  specimen.name = capitalize(specimen.name);
                   return specimen;
                 });
              });
@@ -61,7 +62,12 @@ export class PokemonService {
           'normal',
           pokemon.name + '.png'
         ].join('/');
+        pokemon.name = capitalize(pokemon.name);
         return pokemon;
       });
   }
+}
+
+function capitalize(str: string) {
+  return str && str[0].toUpperCase() + str.slice(1);
 }

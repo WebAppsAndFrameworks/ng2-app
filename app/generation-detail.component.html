@@ -1,11 +1,12 @@
 <div *ngIf="pokemonList">
   <div class="two-pane">
     <div class="left">
-      <div class="pad">
+      <div class="pane-header pad">
         <h2>Generation {{ generation }}</h2>
+        <input [(ngModel)]="filterStr" placeholder="Quick findr">
       </div>
       <ul class="pokemon-list">
-        <li *ngFor="#pokemon of pokemonList"
+        <li *ngFor="#pokemon of pokemonList | pokemonFilter:filterStr"
           class="item"
           (click)="showPokemon(pokemon.id)">
           {{ pokemon.name }}
