@@ -1,8 +1,8 @@
 import {Component, OnInit} from 'angular2/core';
 import {Router} from 'angular2/router';
 
-import {Generation} from './generation';
-import {PokemonService} from './pokemon.service';
+import {Hero} from './hero';
+import {HeroService} from './hero.service';
 
 @Component({
   selector: 'dashboard',
@@ -10,21 +10,21 @@ import {PokemonService} from './pokemon.service';
   styleUrls: ['app/dashboard.component.css'],
 })
 export class DashboardComponent implements OnInit{
-  generations: Generation[] = [];
+  heroes: Hero[] = [];
 
   constructor(
-    private _pokemonService: PokemonService,
+    private _heroService: HeroService,
     private _router: Router) {
 
     }
 
   ngOnInit() {
-    this._pokemonService.getGenerations()
-      .then((generations) => this.generations = generations);
+    this._heroService.getHeroes()
+      .then((heroes) => this.heroes = heroes.slice(1,5));
   }
 
-  gotoDetail(generation: Generation) {
-    let link = ['GenerationDetail', {id: generation.id}];
+  gotoDetail(hero: Hero) {
+    let link = ['HeroDetail', {id: hero.id}];
     this._router.navigate(link);
   }
 }

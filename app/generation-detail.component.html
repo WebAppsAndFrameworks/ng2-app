@@ -1,0 +1,9 @@
+<div *ngIf="pokemonList">
+  <h2>Generation details!</h2>
+  <ul>
+    <li *ngFor="#pokemon of pokemonList">
+      {{ pokemon.name }}
+    </li>
+  </ul>
+  <button (click)="goBack()">Back</button>
+</div>
