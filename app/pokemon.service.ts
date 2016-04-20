@@ -76,16 +76,15 @@ export class PokemonService {
       return Rx.Observable.of(cache.pokemon.get(id));
     }
     return this.http.get([BASE_URL, 'pokemon-species', id].join('/'))
-      .map(response => response.json())
-      .map(pokemon => {
-        pokemon.img = [
-          'http://img.pokemondb.net/artwork',
-          pokemon.name + '.jpg'
-        ].join('/');
-        pokemon.name = upperFirst(pokemon.name);
+      .map((response:any) => {
+        var result = response.json(),
+            name = result.name;
 
-        cache.pokemon.set(id, pokemon);
-        return pokemon;
+        result.img = 'http://img.pokemondb.net/artwork/' + name + '.jpg';
+        result.name = upperFirst(name);
+
+        cache.pokemon.set(id, result);
+        return result;
       });
   }
 }
