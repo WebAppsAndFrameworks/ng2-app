@@ -1,12 +1,12 @@
 import {Injectable} from 'angular2/core';
 import {Http, HTTP_PROVIDERS} from 'angular2/http';
-import {memoize, upperFirst} from 'lodash';
+import {upperFirst} from 'lodash';
 import Rx from 'rxjs/Rx';
 
 const cache = {
-  generation: new memoize.Cache,
-  pokemon: new memoize.Cache,
-  species: new memoize.Cache
+  generation: new Map,
+  pokemon: new Map,
+  species: new Map
 };
 
 const idRegex = /(\d+)\/$/;
@@ -59,7 +59,7 @@ export class PokemonService {
       return Rx.Observable.of(cache.species.get(generation));
     }
     return this.getGeneration(generation)
-      .map(generation => generation.pokemon_species)
+      .map((generation:any) => generation.pokemon_species)
       .map(species => {
         var result = species.map((specimen) => {
           specimen.id = +idRegex.exec(specimen.url)[1];
