@@ -74,10 +74,16 @@ input:focus {
   align-items: center;
 }
 
+.empty {
+  font: 40px 'Open Sans Condensed', sans-serif;
+  font-weight: 700;
+  color: #f0f0f0;
+}
+
 .selected-pokemon h2 {
   font: 40px 'Open Sans Condensed', sans-serif;
   font-weight: 700;
-  color: #403E2F;
+  color: rgba(0, 0, 0, 0.1);
 }
 
 .selected-pokemon table {

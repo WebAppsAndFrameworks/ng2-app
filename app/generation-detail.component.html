@@ -43,6 +43,9 @@
           </tr> -->
         </table>
       </div>
+      <div *ngIf="!loading && !selectedPokemon" class="empty">
+        Select a Pokemon to view their details.
+      </div>
     </div>
   </div>
 </div>
