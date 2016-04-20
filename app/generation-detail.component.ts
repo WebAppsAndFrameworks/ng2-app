@@ -25,6 +25,7 @@ export class GenerationDetailComponent implements OnInit {
   selectedPokemon: any;
   generation: number;
   filterStr: string;
+  loading: boolean;
 
   ngOnInit() {
     let id = +this._routeParams.get('id');
@@ -36,8 +37,12 @@ export class GenerationDetailComponent implements OnInit {
   }
 
   showPokemon(id: number) {
+    this.loading = true;
+    this.selectedPokemon = null;
+
     this._pokemonService.getPokemon(id)
       .subscribe((pokemon) => {
+        this.loading = false;
         this.selectedPokemon = pokemon;
       });
   }
