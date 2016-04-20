@@ -14,9 +14,31 @@
       </ul>
     </div>
     <div class="right">
-      <div *ngIf="selectedPokemon">
+      <div *ngIf="selectedPokemon" class="selected-pokemon">
         <h2>{{ selectedPokemon.name }}</h2>
         <img src="{{ selectedPokemon.img }}" />
+        <table>
+          <tr>
+            <td>Id</td>
+            <td>{{selectedPokemon.id}}</td>
+          </tr>
+          <tr>
+            <td>Color</td>
+            <td>{{selectedPokemon.color.name}}</td>
+          </tr>
+          <tr>
+            <td>Shape</td>
+            <td>{{selectedPokemon.shape.name}}</td>
+          </tr>
+          <!-- <tr>
+            <td>Flavor Text</td>
+            <td>{{selectedPokemon.flavor_text_entries.filter(txt => txt.language.name === 'en')[0].flavor_text}}</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+          </tr> -->
+        </table>
       </div>
     </div>
   </div>

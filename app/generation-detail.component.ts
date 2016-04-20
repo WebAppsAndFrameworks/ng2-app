@@ -30,13 +30,9 @@ export class GenerationDetailComponent implements OnInit {
     let id = +this._routeParams.get('id');
     this.generation = id;
     this._pokemonService.getSpecies(id)
-      .subscribe((species) => {
-        this.pokemonList = species;
+      .subscribe((species: any[]) => {
+        this.pokemonList = species.sort((a, b) => a.id - b.id);
       });
-  }
-
-  goBack() {
-    window.history.back();
   }
 
   showPokemon(id: number) {

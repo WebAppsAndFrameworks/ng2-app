@@ -56,11 +56,15 @@ export class PokemonService {
     return this.http.get([BASE_URL, 'pokemon-species', id].join('/'))
       .map(response => response.json())
       .map(pokemon => {
+        // pokemon.img = [
+        //   'http://img.pokemondb.net/sprites',
+        //   'black-white',
+        //   'normal',
+        //   pokemon.name + '.png'
+        // ].join('/');
         pokemon.img = [
-          'http://img.pokemondb.net/sprites',
-          'black-white',
-          'normal',
-          pokemon.name + '.png'
+          'http://img.pokemondb.net/artwork',
+          pokemon.name + '.jpg'
         ].join('/');
         pokemon.name = capitalize(pokemon.name);
         return pokemon;

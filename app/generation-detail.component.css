@@ -65,3 +65,39 @@ input:focus {
   background: rgba(0, 0, 0, 0.1);
   border-bottom: 0.0625em solid rgba(0, 0, 0, 0);
 }
+
+.selected-pokemon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.selected-pokemon h2 {
+  font: 40px 'Open Sans Condensed', sans-serif;
+  font-weight: 700;
+  color: #403E2F;
+}
+
+.selected-pokemon table {
+  margin-top: 50px;
+  width: 350px;
+}
+
+.selected-pokemon tr td:first-child {
+  font: 20px 'Open Sans Condensed', sans-serif;
+  font-weight: 300;
+  color: #888;
+  text-transform: uppercase;
+  width: 150px;
+  text-align: right;
+  padding-right: 5px;
+}
+
+.selected-pokemon tr td:last-child {
+  font: 30px 'Open Sans Condensed', sans-serif;
+  font-weight: 700;
+  color: #403E2F;
+  text-transform: uppercase;
+  padding-left: 5px;
+}
