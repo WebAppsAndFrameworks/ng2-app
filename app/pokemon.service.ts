@@ -1,6 +1,9 @@
 import {Injectable} from 'angular2/core';
 import {Http, HTTP_PROVIDERS} from 'angular2/http';
 import 'rxjs/Rx';
+import * as _ from 'lodash';
+
+console.log(_.VERSION);
 
 const BASE_URL = 'http://pokeapi.co/api/v2';
 
