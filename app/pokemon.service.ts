@@ -1,9 +1,15 @@
 import {Injectable} from 'angular2/core';
 import {Http, HTTP_PROVIDERS} from 'angular2/http';
-import 'rxjs/Rx';
-import * as _ from 'lodash';
+import {memoize, upperFirst} from 'lodash';
+import Rx from 'rxjs/Rx';
 
-console.log(_.VERSION);
+const cache = {
+  generation: new memoize.Cache,
+  pokemon: new memoize.Cache,
+  species: new memoize.Cache
+};
+
+const idRegex = /(\d+)\/$/;
 
 const BASE_URL = 'http://pokeapi.co/api/v2';
 
@@ -37,44 +43,49 @@ export class PokemonService {
   }
 
   getGeneration(id: number) {
+    if (cache.generation.has(id)) {
+      return Rx.Observable.of(cache.generation.get(id));
+    }
     return this.http.get([BASE_URL, 'generation', id].join('/'))
-             .map(response => response.json());
+      .map(response => {
+        var result = response.json();
+        cache.generation.set(id, result);
+        return result;
+      });
   }
 
   getSpecies(generation: number) {
-    const idRegex = /(\d+)\/$/;
-
+    if (cache.species.has(generation)) {
+      return Rx.Observable.of(cache.species.get(generation));
+    }
     return this.getGeneration(generation)
-             .map(generation => generation.pokemon_species)
-             .map(species => {
-                return species.map((specimen) => {
-                  specimen.id = +idRegex.exec(specimen.url)[1];
-                  specimen.name = capitalize(specimen.name);
-                  return specimen;
-                });
-             });
+      .map(generation => generation.pokemon_species)
+      .map(species => {
+        var result = species.map((specimen) => {
+          specimen.id = +idRegex.exec(specimen.url)[1];
+          specimen.name = upperFirst(specimen.name);
+          return specimen;
+        });
+        cache.species.set(generation, result);
+        return result;
+      });
   }
 
   getPokemon(id: number) {
+    if (cache.pokemon.has(id)) {
+      return Rx.Observable.of(cache.pokemon.get(id));
+    }
     return this.http.get([BASE_URL, 'pokemon-species', id].join('/'))
       .map(response => response.json())
       .map(pokemon => {
-        // pokemon.img = [
-        //   'http://img.pokemondb.net/sprites',
-        //   'black-white',
-        //   'normal',
-        //   pokemon.name + '.png'
-        // ].join('/');
         pokemon.img = [
           'http://img.pokemondb.net/artwork',
           pokemon.name + '.jpg'
         ].join('/');
-        pokemon.name = capitalize(pokemon.name);
+        pokemon.name = upperFirst(pokemon.name);
+
+        cache.pokemon.set(id, pokemon);
         return pokemon;
       });
   }
-}
-
-function capitalize(str: string) {
-  return str && str[0].toUpperCase() + str.slice(1);
 }
