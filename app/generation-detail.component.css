@@ -55,6 +55,23 @@ input:focus {
   align-items: center;
 }
 
+.badge {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  text-align: center;
+  line-height: 1em;
+  height: 1.8rem;
+  padding: 0.5em 0.7em 0 0.7em;
+}
+
+strong {
+  font-family: 'Open Sans Condensed', sans-serif;
+  padding:5px;
+  letter-spacing: 1px;
+  font-weight: 500;
+  color: #3b8686;
+}
+
 .pokemon-list .item {
   height: 4rem;
   border-bottom: 0.0625em solid rgba(0, 0, 0, 0.1);
@@ -83,7 +100,7 @@ input:focus {
 .selected-pokemon h2 {
   font: 40px 'Open Sans Condensed', sans-serif;
   font-weight: 700;
-  color: rgba(0, 0, 0, 0.1);
+  color: #3b8686;
 }
 
 .selected-pokemon table {

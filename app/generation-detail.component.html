@@ -9,7 +9,7 @@
         <li *ngFor="#pokemon of pokemonList | pokemonFilter:filterStr"
           class="item"
           (click)="showPokemon(pokemon.id)">
-          {{ pokemon.name }}
+          <span class="badge">{{ pokemon.id }}</span>&nbsp;<strong>{{ pokemon.name }}</strong>
         </li>
       </ul>
     </div>
