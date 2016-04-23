@@ -19,8 +19,16 @@ export class DashboardComponent implements OnInit{
     }
 
   ngOnInit() {
+    interface launchRequest {generationId: number};
+    if(window['initialLaunch']){
+      var initialLaunch: = <launchRequest>window['initialLaunch'];
+      let link = ['GenerationDetail', {id: initialLaunch.generationId}];
+      this._router.navigate(link);
+    } else {
+
     this._pokemonService.getGenerations()
       .then((generations) => this.generations = generations);
+    }
   }
 
   gotoDetail(generation: Generation) {

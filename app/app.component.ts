@@ -33,5 +33,41 @@ import {PokemonService} from './pokemon.service';
   }
 ])
 export class AppComponent {
-  title = 'Pokemon Findr'
+  title = 'Pokemon Findr';
+  requestedGeneration;
+
+  constructor() {
+    // Handle Cortana activation adding the event listener before DOM Content Loaded
+    // parse out the command type and call the respective game APIs
+    var Windows: any = window['Windows'];
+    if (typeof Windows !== 'undefined') {
+        console.log('Windows namespace is available');
+        Windows.UI.WebUI.WebUIApplication.addEventListener('activated', function (args) {
+            console.log("ACTIVATED");
+            var activation = Windows.ApplicationModel.Activation;
+            // Check to see if the app was activated by a voice command
+            if (args.kind === activation.ActivationKind.voiceCommand) {
+                var speechRecognitionResult = args.result;
+                var textSpoken = speechRecognitionResult.text;
+                var command = speechRecognitionResult.rulePath[0];
+                console.log('The command is: ' + command);
+                if (command === 'find') {
+                    console.log('The speech reco result is: ' + speechRecognitionResult);
+                    console.log('The text spoken is: ' + textSpoken);
+                }
+                else {
+                    // No valid command specified
+                    console.log('No valid command specified');
+                }
+            }
+        });
+    } else {
+        console.log('Windows namespace is unavaiable');
+    }
+  }
+
+  ngOnInit() {
+
+  }
 }
+

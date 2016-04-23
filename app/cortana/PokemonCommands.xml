@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+  <VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.2">
+  <CommandSet xml:lang="en-us" Name="PokemonFindr">
+    <CommandPrefix>Pokemon Finder</CommandPrefix>
+    <Example>Find pokemon in generation one</Example>
+
+    <Command Name="find">
+      <Example>find pokemon generation one</Example>
+      <ListenFor RequireAppName="BeforeOrAfterPhrase">find [all] pokemon [in] {generation}</ListenFor>
+      <ListenFor RequireAppName="ExplicitlySpecified"> {builtin:AppName} find [all] pokemon [in] {generation}</ListenFor>
+      <Feedback>Finding pokemon in {generation}</Feedback>
+      <Navigate />
+    </Command>
+
+    <PhraseList Label="generation">
+      <Item>generation one</Item>
+      <Item>generation two</Item>
+      <Item>generation three</Item>
+      <Item>generation four</Item>
+      <Item>generation five</Item>
+      <Item>generation six</Item>
+    </PhraseList>
+
+  </CommandSet>
+</VoiceCommands>
