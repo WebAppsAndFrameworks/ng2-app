@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <Machine>JESSE03</Machine>
-    <WindowsUser>jessesh</WindowsUser>
+    <Machine>ZTH</Machine>
+    <WindowsUser>zackhall</WindowsUser>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetOsVersion>10.0</TargetOsVersion>
     <TargetOsDescription>Windows 10.0</TargetOsDescription>
     <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
     <PackageArchitecture>neutral</PackageArchitecture>
     <PackageIdentityName>f5ef87d5-c300-477d-992b-b3bde0a6140c</PackageIdentityName>
-    <IntermediateOutputPath>F:\GitHubRepos\ng2-app\bld\Debug\</IntermediateOutputPath>
-    <RegisteredManifestChecksum>92F498B460240833CF181FBC25C820D4711B684FAFFAEDEEA78E82509A355687</RegisteredManifestChecksum>
+    <IntermediateOutputPath>E:\github\ng2-app\bld\Debug\</IntermediateOutputPath>
+    <RegisteredManifestChecksum>1B985CF39639A96C6B999AA8F1999605915E941BF3BE60FF1E13B8B3EF9C86EB</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>f5ef87d5-c300-477d-992b-b3bde0a6140c_1.0.0.0_neutral__99vaxwdrgnf76</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>f5ef87d5-c300-477d-992b-b3bde0a6140c_99vaxwdrgnf76!App</RegisteredUserModeAppID>
     <RegisteredPackageID>f5ef87d5-c300-477d-992b-b3bde0a6140c</RegisteredPackageID>
@@ -19,50 +19,50 @@
     <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="F:\GitHubRepos\ng2-app\bin\Debug\AppxManifest.xml">
+    <AppXManifest Include="E:\github\ng2-app\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-04-22T23:18:10.481</Modified>
+      <Modified>2016-04-28T22:52:26.029</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="F:\GitHubRepos\ng2-app\images\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="E:\github\ng2-app\images\LockScreenLogo.scale-200.png">
       <PackagePath>images\LockScreenLogo.scale-200.png</PackagePath>
-      <Modified>2015-10-11T05:09:42.000</Modified>
+      <Modified>2016-04-28T22:47:34.592</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\GitHubRepos\ng2-app\images\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="E:\github\ng2-app\images\SplashScreen.scale-200.png">
       <PackagePath>images\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-10-11T05:09:42.000</Modified>
+      <Modified>2016-04-28T22:47:34.595</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\GitHubRepos\ng2-app\images\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="E:\github\ng2-app\images\Square150x150Logo.scale-200.png">
       <PackagePath>images\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-10-11T05:09:42.000</Modified>
+      <Modified>2016-04-28T22:47:34.596</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\GitHubRepos\ng2-app\images\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="E:\github\ng2-app\images\Square44x44Logo.scale-200.png">
       <PackagePath>images\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-10-11T05:09:42.000</Modified>
+      <Modified>2016-04-28T22:47:34.597</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\GitHubRepos\ng2-app\images\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="E:\github\ng2-app\images\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>images\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-10-11T05:09:42.000</Modified>
+      <Modified>2016-04-28T22:47:34.599</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\GitHubRepos\ng2-app\images\StoreLogo.png">
+    <AppxPackagedFile Include="E:\github\ng2-app\images\StoreLogo.png">
       <PackagePath>images\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-10-11T05:09:42.000</Modified>
+      <Modified>2016-04-28T22:47:34.600</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\GitHubRepos\ng2-app\images\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="E:\github\ng2-app\images\Wide310x150Logo.scale-200.png">
       <PackagePath>images\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-10-11T05:09:42.000</Modified>
+      <Modified>2016-04-28T22:47:34.601</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\GitHubRepos\ng2-app\bin\Debug\ReverseMap\resources.pri">
+    <AppxPackagedFile Include="E:\github\ng2-app\bin\Debug\ReverseMap\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2016-04-22T23:18:10.422</Modified>
+      <Modified>2016-04-28T22:52:25.520</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

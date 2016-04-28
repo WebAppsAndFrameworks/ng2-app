@@ -1,4 +1,1 @@
-typings/
-node_modules/
-app/**/*.js
-app/**/*.map
+# Updated .gitignore for gh-pages branch

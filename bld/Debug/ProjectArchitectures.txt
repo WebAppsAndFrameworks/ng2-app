@@ -1,1 +1,1 @@
-F:\GitHubRepos\ng2-app\PokemonFindr2.jsproj;neutral
+E:\github\ng2-app\PokemonFindr2.jsproj;neutral
